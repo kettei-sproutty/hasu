@@ -1,10 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import browser from 'webextension-polyfill'
+import LoadingComponent from './components/loading'
+import AppContext from './context'
 import './styles/index.scss'
 
 const MyApp: React.FC = () => {
-
-    return <div className="w-96 h-96 bg-green-400">Test</div>
+    return (
+        <AppContext>
+           <LoadingComponent />
+        </AppContext>
+    )
 }
 
-ReactDOM.render(<MyApp />, document.getElementById('root'))
+browser.tabs.query({ active: true, currentWindow: true })
+    .then(() => {
+        ReactDOM.render(<MyApp />, document.getElementById('root'))
+    })
+    .catch(console.error);
