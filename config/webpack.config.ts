@@ -81,8 +81,8 @@ const webpackConfig: Configuration = {
   },
   output: {
     filename: '[name].js',
+    clean: true,
     path: OUTPUT_PATH,
-    publicPath: PUBLIC_PATH,
   },
   plugins: [htmlPlugin, cleanPlugin, miniCssPlugin, copyWebpackPublic],
   devtool: ENV === 'development' ? 'eval-cheap-module-source-map' : false,
