@@ -13,7 +13,7 @@ const PUBLIC_PATH = '/'
 const ENV = (process.env['NODE_ENV'] as Configuration['mode']) || 'development'
 
 const typescriptRule: RuleSetRule = {
-  test: new RegExp('.tsx'),
+  test: /\.(tsx|ts)$/i,
   use: 'ts-loader',
   exclude: new RegExp('node_modules'),
 }
