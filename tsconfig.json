@@ -17,6 +17,7 @@
     "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
     "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
     "noUncheckedIndexedAccess": true,                 /* Include 'undefined' in index signature results */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+    "types": ["cypress"]
+  },
 }
