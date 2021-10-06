@@ -2,11 +2,14 @@
     "manifest_version": 2,
     "name": "manga-tracker",
     "version": "1.0.0",
+    "homepage_url": "https://github.com/kettei-sproutty/manga-tracker",
     "description": "Collective manga tracker",
-    "content_script": [
-        {
-            "matches": ["https://*"],
-            "js": ["dist/index.js"]
-        }
-    ]
+    "background": {
+        "scripts": ["dist/app.js"]
+    },
+    "browser_action": {
+        "default_icon": "dist/assets/icons/32.webp",
+        "default_title": "Manga Tracker",
+        "default_popup": "dist/index.html"
+    }
 }
