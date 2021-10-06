@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "manga-tracker",
+    "version": "1.0.0",
+    "description": "Collective manga tracker",
+    "content_script": [
+        {
+            "matches": ["https://*"],
+            "js": ["dist/index.js"]
+        }
+    ]
+}

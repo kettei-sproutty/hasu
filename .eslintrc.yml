@@ -1,3 +1,5 @@
 parser: '@typescript-eslint/parser'
 extends:
   - 'prettier'
+  - 'plugin:tailwind/recommended'
+  - 'plugin:cypress/recommended'
