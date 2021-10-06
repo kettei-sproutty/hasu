@@ -4,7 +4,7 @@ import './styles/index.scss'
 
 const MyApp: React.FC = () => {
 
-    return <span className="uppercase bg-green-400">{process.env['NODE_ENV']}</span>
+    return <div className="w-96 h-96 bg-green-400">Test</div>
 }
 
-ReactDOM.render(<MyApp />, document.querySelector('#root'))
+ReactDOM.render(<MyApp />, document.getElementById('root'))
