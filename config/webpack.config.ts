@@ -31,8 +31,6 @@ const sassRule: RuleSetRule = {
   ],
 }
 
-
-
 const htmlPlugin = new HtmlPlugin({
   template: path.join(SOURCE_PATH, 'public', 'index.html'),
 })
