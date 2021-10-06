@@ -1,13 +1,10 @@
 import React from 'react'
 
-type LoadingContextType = {
-    loading: boolean,
-    toggle: React.Dispatch<React.SetStateAction<boolean>>
-}
+type LoadingContextType = [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 
-const LoadingContext = React.createContext<LoadingContextType>({
-    loading: false,
-    toggle: () => null
-})
+const loading = false
+const setLoading = () => null
+
+const LoadingContext = React.createContext<LoadingContextType>([loading, setLoading])
 
 export default LoadingContext
