@@ -64,6 +64,8 @@
     "dev": "webpack serve --config ./config/webpack.dev.ts --https --env NODE_ENV=development",
     "build": "webpack --config ./config/webpack.prod.ts --env NODE_ENV=production && prettier --write dist/index.html",
     "test": "cypress open",
-    "ext": "web-ext run"
+    "ext": "web-ext run -t firefox-desktop -t chromium",
+    "ext:firefox": "web-ext run",
+    "ext:chrome": "web-ext run -t chromium"
   }
 }
