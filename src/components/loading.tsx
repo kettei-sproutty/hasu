@@ -6,7 +6,7 @@ const LoadingComponent: React.FC = () => {
 
   if (!loading) return null
 
-  return <div className="z-50 w-full h-full" />
+  return <div className="absolute z-50 bg-pink-400 size-full" />
 }
 
 export default LoadingComponent

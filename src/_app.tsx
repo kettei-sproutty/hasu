@@ -1,18 +1,29 @@
 import React from 'react'
-import Header from './components/layout/header'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import LoadingComponent from './components/loading'
 import AppContext from './context'
-import Routes from './router'
+import Header from './components/layout/header'
+import History from './pages/history'
+import Home from './pages/home'
 import './styles/index.scss'
 
 const MyApp: React.FC = () => {
-    return (
-        <AppContext>
-           <LoadingComponent />
-           <Header />
-           <Routes />
-        </AppContext>
-    )
+  return (
+    <AppContext>
+      <LoadingComponent />
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route path="/history">
+            <History />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </AppContext>
+  )
 }
 
 export default MyApp

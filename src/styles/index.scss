@@ -4,8 +4,12 @@
 
 @import './components/header';
 
-#root {
+.size-full {
     width: 23rem;
     height: 35rem;
-    @apply bg-pink-100;
+    @apply overflow-hidden;
+}
+
+#root {
+    @apply bg-pink-200;
 }
