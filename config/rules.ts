@@ -1,8 +1,6 @@
-import path from 'path'
 import { RuleSetRule } from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import sass from 'sass'
-import { PUBLIC_PATH } from './paths'
 
 const typescriptRule: RuleSetRule = {
   test: /\.(tsx|ts)$/i,
@@ -32,7 +30,7 @@ const fileRule: RuleSetRule = {
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        outputPath: path.join(PUBLIC_PATH, 'images'),
+        outputPath: '/assets/images/',
       },
     },
   ],

@@ -2,7 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import './components/header';
+@import './00-settings/font';
+@import './02-generics/resets';
+@import './04-components/header';
 
 .size-full {
     width: 23rem;
