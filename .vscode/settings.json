@@ -1,4 +1,7 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "css.customData": ["./tailwind_css.json"]
+    "css.customData": [
+        "./tailwind_css.json"
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
