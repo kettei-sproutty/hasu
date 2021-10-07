@@ -1,10 +1,16 @@
+import path from 'path'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import WebExtPlugin from 'web-ext-plugin'
-import path from 'path'
-import { NODE_MODULES_PATH, SOURCE_PATH } from './paths'
+import Dotenv from 'dotenv-webpack'
+import { NODE_MODULES_PATH, SOURCE_PATH, ROOT_PATH } from './paths'
+
+const dotenv = new Dotenv({
+  path: path.join(ROOT_PATH, '.env'),
+  safe: true, // load .env.example (defaults to "false" which does not use dotenv-safe)
+})
 
 const htmlPlugin = new HtmlWebpackPlugin({
   template: path.join(SOURCE_PATH, 'index.html'),
@@ -27,6 +33,13 @@ const copyWebpackPublic = new CopyPlugin({
 
 const webExtPlugin = new WebExtPlugin({})
 
-const plugins = [htmlPlugin, cleanPlugin, miniCssPlugin, copyWebpackPublic, webExtPlugin]
+const plugins = [
+  dotenv,
+  htmlPlugin,
+  cleanPlugin,
+  miniCssPlugin,
+  copyWebpackPublic,
+  webExtPlugin,
+]
 
 export default plugins
