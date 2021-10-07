@@ -61,7 +61,6 @@
     "format": "prettier --write ./src/*",
     "lint": "eslint --fix ./src/*",
     "type-check": "tsc --noEmit",
-    "dev": "webpack --config ./config/webpack.dev.ts --env NODE_ENV=development --watch",
     "start": "webpack --config ./config/webpack.prod.ts --env NODE_ENV=production --watch",
     "build": "webpack --config ./config/webpack.prod.ts --env NODE_ENV=production && prettier --write dist/index.html",
     "test": "cypress open",
