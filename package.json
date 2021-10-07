@@ -60,9 +60,9 @@
     "format": "prettier --write ./src/*",
     "lint": "eslint --fix ./src/*",
     "type-check": "tsc --noEmit",
-    "start": "webpack serve --config ./config/webpack.prod.ts --https",
-    "dev": "webpack serve --config ./config/webpack.dev.ts --https",
-    "build": "webpack --config ./config/webpack.config.ts",
+    "start": "webpack serve --config ./config/webpack.prod.ts --https --env NODE_ENV=production",
+    "dev": "webpack serve --config ./config/webpack.dev.ts --https --env NODE_ENV=development",
+    "build": "webpack --config ./config/webpack.prod.ts --env NODE_ENV=production && prettier --write dist/index.html",
     "test": "cypress open",
     "ext": "web-ext run"
   }
