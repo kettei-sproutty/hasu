@@ -1,3 +1,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@import './components/header';
+
+#root {
+    width: 23rem;
+    height: 35rem;
+    @apply bg-pink-100;
+}

@@ -40,6 +40,16 @@
           "url": "https://tailwindcss.com/docs/functions-and-directives#variants"
         }
       ]
+    },
+    {
+      "name": "@apply",
+      "description": "Merge multiple tailwind's classes together",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#apply"
+        }
+      ]
     }
   ]
 }
