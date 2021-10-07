@@ -8,7 +8,7 @@
     "scripts": ["browser-polyfill.js"]
   },
   "browser_action": {
-    "default_icon": "dist/assets/icons/32.webp",
+    "default_icon": "dist/assets/images/32.webp",
     "default_title": "Hasu",
     "default_popup": "dist/index.html"
   }

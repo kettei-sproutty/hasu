@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import browser from 'webextension-polyfill'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import LoadingComponent from './components/loading'
 import AppContext from './context'
@@ -26,4 +28,10 @@ const MyApp: React.FC = () => {
   )
 }
 
-export default MyApp
+browser.tabs
+  .query({ active: true, currentWindow: true })
+  .then(() => {
+    ReactDOM.render(<MyApp />, document.getElementById('root'))
+  })
+  .catch(console.error)
+

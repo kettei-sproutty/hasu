@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import logo from '../../public/icons/32.webp'
 
 const Header: React.FC = () => {
   const history = useHistory();
@@ -15,7 +16,7 @@ const Header: React.FC = () => {
         <a className="header-logo" href='/' onClick={navigateToHome}>
           <span className="sr-only">Go to Home</span> 
           <div className="block">
-            <img width="32" height="32" alt="Logo" src={'/assets/icons/32.webp'} />
+            <img width="32" height="32" alt="Logo" src={logo} />
           </div>
         </a>
       </div>

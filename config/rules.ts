@@ -1,3 +1,4 @@
+import path from 'path'
 import { RuleSetRule } from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import sass from 'sass'
@@ -31,7 +32,7 @@ const fileRule: RuleSetRule = {
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        outputPath: PUBLIC_PATH,
+        outputPath: path.join(PUBLIC_PATH, 'images'),
       },
     },
   ],
