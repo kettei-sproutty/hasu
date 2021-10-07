@@ -2,13 +2,11 @@ import React from 'react'
 import useLoading from '../context/loading/useLoading'
 
 const LoadingComponent: React.FC = () => {
-    const [loading] = useLoading()
+  const [loading] = useLoading()
 
-    if (!loading) return null
+  if (!loading) return null
 
-    return (
-        <div className="w-96 h-96 z-50 bg-red-500" />
-    )
+  return <div className="z-50 w-full h-full" />
 }
 
 export default LoadingComponent
