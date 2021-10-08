@@ -1,0 +1,11 @@
+.button {
+  @apply focus:outline-none text-white text-sm py-1.5 px-3 rounded-md border;
+
+  &__primary {
+    @apply border-pink-400 hover:bg-pink-600 bg-pink-500 hover:shadow-lg;
+    
+    &:disabled {
+      @apply bg-pink-300;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 .header {
-    @apply sticky flex items-center justify-between w-full px-2 mx-auto bg-white h-11;
+    @apply shadow-sm mb-2 sticky flex items-center justify-between w-full px-2 mx-auto bg-white h-11;
 
-    &-logo {
+    &__logo {
         @apply w-8 h-8;
     }
 }
