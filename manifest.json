@@ -5,11 +5,16 @@
   "homepage_url": "https://github.com/kettei-sproutty/hasu",
   "description": "Collective manga tracker",
   "background": {
-    "scripts": ["browser-polyfill.js"]
+    "scripts": ["dist/browser-polyfill.js"]
   },
   "browser_action": {
     "default_icon": "dist/assets/images/32.webp",
     "default_title": "Hasu",
     "default_popup": "dist/index.html"
+  },
+  "icons": {
+    "32": "dist/assets/images/32.webp",
+    "64": "dist/assets/images/64.webp",
+    "128": "dist/assets/images/128.webp"
   }
 }
