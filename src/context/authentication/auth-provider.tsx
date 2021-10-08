@@ -4,7 +4,10 @@ import ErrorPage from '../../pages/error'
 
 const AuthProvider: React.FC = ({ children }) => {
 
-    const { AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_SCOPE, AUTH0_REDIRECT_URI } = process.env
+    const AUTH0_DOMAIN = process.env['AUTH0_DOMAIN']
+    const AUTH0_CLIENT_ID = process.env['AUTH0_CLIENT_ID']
+    const AUTH0_SCOPE = process.env['AUTH0_SCOPE']
+    const AUTH0_REDIRECT_URI = process.env['AUTH0_REDIRECT_URI']
 
     if (!AUTH0_DOMAIN || !AUTH0_CLIENT_ID || !AUTH0_SCOPE || !AUTH0_REDIRECT_URI) {
         return <ErrorPage message="Auth0 Error" />
