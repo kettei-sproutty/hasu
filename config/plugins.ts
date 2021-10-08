@@ -5,11 +5,11 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import WebExtPlugin from 'web-ext-plugin'
 import Dotenv from 'dotenv-webpack'
+import ESLintPlugin from 'eslint-webpack-plugin'
 import { NODE_MODULES_PATH, SOURCE_PATH, ROOT_PATH } from './paths'
 
 const dotenv = new Dotenv({
   path: path.join(ROOT_PATH, '.env'),
-  safe: true, // load .env.example (defaults to "false" which does not use dotenv-safe)
 })
 
 const htmlPlugin = new HtmlWebpackPlugin({
@@ -31,7 +31,14 @@ const copyWebpackPublic = new CopyPlugin({
   ],
 })
 
-const webExtPlugin = new WebExtPlugin({})
+const webExtPlugin = new WebExtPlugin({
+  browserConsole: true,
+  target: 'chromium'
+})
+
+const eslintPlugin = new ESLintPlugin({
+  fix: true
+})
 
 const plugins = [
   dotenv,
@@ -40,6 +47,7 @@ const plugins = [
   miniCssPlugin,
   copyWebpackPublic,
   webExtPlugin,
+  eslintPlugin
 ]
 
 export default plugins
