@@ -4,6 +4,7 @@
 
 @import './00-settings/font';
 @import './02-generics/resets';
+@import './04-components/button';
 @import './04-components/header';
 
 .size-full {
@@ -13,5 +14,5 @@
 }
 
 #root {
-    @apply bg-pink-200;
+    @apply bg-pink-50;
 }
