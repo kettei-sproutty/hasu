@@ -1,13 +1,20 @@
-import { useAuth0 } from '@auth0/auth0-react'
 import React from 'react'
+import { useHistory } from 'react-router'
+import getPageRoute from '../context/routes/get-route'
 
 const HomePage: React.FC = () => {
-    const { loginWithRedirect } = useAuth0()
+
+    const history = useHistory()
+
+    const navigateToLogin = () => {
+        const route = getPageRoute('login')
+        history.push(route)
+    }
 
     return (
         <div className="page">
-            <button onClick={() => loginWithRedirect({ scope: '' })}>
-                <span className="not-sr-only">Login</span>
+            <button className="button button__primary" onClick={navigateToLogin}>
+                <span className="not-sr-only">Auth</span>
             </button>
         </div>
     )
