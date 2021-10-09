@@ -13,6 +13,10 @@
     @apply overflow-hidden;
 }
 
+.page {
+    overflow-y: auto;
+}
+
 #root {
-    @apply bg-pink-50;
+    @apply bg-gray-100;
 }
