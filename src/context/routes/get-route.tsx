@@ -1,4 +1,4 @@
-type Page = 'home' | 'history' | 'error' | 'login'
+export type Page = 'home' | 'history' | 'error' | 'login' | 'details'
 
 type RouteType = {
     [key in Page]: string
@@ -8,7 +8,8 @@ const routes: RouteType = {
     home: '/',
     history: '/history',
     error: '/error',
-    login: '/login'
+    login: '/login',
+    details: '/details'
 }
 
 const getPageRoute = (page: Page) => {

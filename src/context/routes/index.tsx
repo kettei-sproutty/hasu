@@ -5,6 +5,7 @@ import Home from '../../pages/home'
 import ErrorPage from '../../pages/error'
 import AuthPage from '../../pages/auth/login'
 import getPageRoute from './get-route'
+import DetailsPage from '../../pages/details'
 
 const Routes: React.FC = () => {
 
@@ -21,6 +22,10 @@ const Routes: React.FC = () => {
       </Route>
       <Route path={getPageRoute('error')}>
         <ErrorPage />
+      </Route>
+      <Route path={getPageRoute('details')} render={(props: any) => {
+        return <DetailsPage {...props} />
+      }}>
       </Route>
       <Route path="*">
         <ErrorPage message={'This page does not exists'} />
