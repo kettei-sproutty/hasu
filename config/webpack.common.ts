@@ -8,6 +8,7 @@ import { SOURCE_PATH } from './paths'
 const webpackCommonConfig: Configuration = {
   entry: {
     app: path.join(SOURCE_PATH, '_app.tsx'),
+    background: path.join(SOURCE_PATH, 'background', 'index.ts')
   },
   target: 'web',
   resolve: {

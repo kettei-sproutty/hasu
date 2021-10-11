@@ -5,7 +5,7 @@ import webpackCommonConfig from "./webpack.common"
 
 const webpackProdConfig: Configuration = merge(webpackCommonConfig, {
     mode: 'production',
-    devtool: false,
+    devtool: 'source-map',
 })
 
 export default webpackProdConfig

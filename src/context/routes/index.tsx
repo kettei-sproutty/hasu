@@ -11,7 +11,7 @@ const Routes: React.FC = () => {
 
   return (
     <Switch>
-      <Route exact path={[getPageRoute('home'), "/dist/index.html"]}>
+      <Route exact path={[getPageRoute('home'), "/index.html"]}>
         <Home />
       </Route>
       <Route path={getPageRoute('login')}>

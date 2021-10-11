@@ -17,7 +17,7 @@ const MediaCard: React.FC<MediaCardProps> = (props) => {
 
   return (
     <div
-      className="container h-full overflow-hidden text-white rounded-sm shadow-md cursor-pointer max-h-36 min-w-24 hover:shadow-2xl transform scale-95 hover:scale-100 duration-150"
+      className="container h-full overflow-hidden text-white rounded-sm shadow-md cursor-pointer max-h-36 min-w-24 hover:shadow-md transform scale-95 hover:scale-100 duration-150"
       onClick={goToDetailsPage}
     >
       <img className="w-full" src={props.image} alt={props.title + ' image'} />

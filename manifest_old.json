@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Hasu",
+  "version": "1.0.0",
+  "background_color": "#e5e7eb",
+  "theme_color": "#9ca3af",
+  "homepage_url": "https://github.com/kettei-sproutty/hasu",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "description": "Collective manga tracker",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "public/images/512.png",
+    "default_title": "Hasu",
+    "default_popup": "index.html"
+  },
+  "icons": [
+    { "sizes": "32x32", "type": "image/png", "src": "public/images/32.webp" },
+    { "sizes": "64x64", "type": "image/png", "src": "public/images/64.webp" },
+    {
+      "sizes": "128x128",
+      "type": "image/png",
+      "src": "public/images/128.webp"
+    },
+    { "sizes": "192x192", "type": "image/png", "src": "public/images/192.png" },
+    {
+      "sizes": "512x512",
+      "type": "image/png",
+      "src": "public/images/512.png",
+      "purpose": "any maskable"
+    }
+  ]
+}

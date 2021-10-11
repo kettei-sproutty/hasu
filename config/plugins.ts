@@ -6,7 +6,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import WebExtPlugin from 'web-ext-plugin'
 import Dotenv from 'dotenv-webpack'
 import ESLintPlugin from 'eslint-webpack-plugin'
-import { NODE_MODULES_PATH, SOURCE_PATH, ROOT_PATH } from './paths'
+import WorkboxPlugin from 'workbox-webpack-plugin'
+import { NODE_MODULES_PATH, SOURCE_PATH, ROOT_PATH, OUTPUT_PATH } from './paths'
 
 const dotenv = new Dotenv({
   path: path.join(ROOT_PATH, '.env'),
@@ -20,7 +21,7 @@ const cleanPlugin = new CleanWebpackPlugin()
 
 const miniCssPlugin = new MiniCssExtractPlugin({
   filename: 'styles/[name].[contenthash].css',
-  chunkFilename: '[id].[contenthash].css',
+  chunkFilename: 'styles/[id].[contenthash].css',
 })
 
 const copyWebpackPublic = new CopyPlugin({
@@ -28,16 +29,31 @@ const copyWebpackPublic = new CopyPlugin({
     {
       from: path.join(NODE_MODULES_PATH, 'webextension-polyfill', 'dist', 'browser-polyfill.js'),
     },
+    {
+      from: path.join(SOURCE_PATH, 'manifest.json'),
+      to: OUTPUT_PATH
+    },
+    {
+      from: path.join(SOURCE_PATH, 'public', 'locales'),
+      to: path.join(OUTPUT_PATH, 'public', 'locales'),
+
+    }
   ],
 })
 
 const webExtPlugin = new WebExtPlugin({
   browserConsole: true,
-  target: 'chromium'
+  target: 'chromium',
+  sourceDir: OUTPUT_PATH,
 })
 
 const eslintPlugin = new ESLintPlugin({
   fix: true
+})
+
+const workboxPlugin = new WorkboxPlugin.GenerateSW({
+  clientsClaim: true,
+  skipWaiting: true,
 })
 
 const plugins = [
@@ -47,6 +63,7 @@ const plugins = [
   miniCssPlugin,
   copyWebpackPublic,
   webExtPlugin,
+  workboxPlugin,
   eslintPlugin
 ]
 

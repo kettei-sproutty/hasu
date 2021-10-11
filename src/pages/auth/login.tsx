@@ -22,7 +22,9 @@ const AuthPage: React.FC = () => {
       <div className="flex items-center justify-center h-full p-4 pt-4 bg-gray-50">
         <div className="w-full space-y-8">
           <div>
-            <SmallLogo className={'mx-auto'} width={48} height={48} />
+            <div className='w-12 h-12 mx-auto'>
+              <SmallLogo width={48} height={48} />
+            </div>
             <h2 className="mt-6 text-3xl font-bold text-center text-gray-700">
               Sign in to your account
             </h2>

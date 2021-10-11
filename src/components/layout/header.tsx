@@ -2,11 +2,13 @@ import { useAuth0 } from '@auth0/auth0-react'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import getPageRoute from '../../context/routes/get-route'
-import SmallLogo from './logo-small'
+import BigLogo from './logo-big'
+import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
   const history = useHistory()
   const { isAuthenticated, user } = useAuth0()
+  const { t } = useTranslation('common')
 
   const navigateToHome = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -26,7 +28,7 @@ const Header: React.FC = () => {
         <a className="header-logo" href="/" onClick={navigateToHome}>
           <span className="sr-only">Go to Home</span>
           <div className="block">
-            <SmallLogo />
+            <BigLogo />
           </div>
         </a>
       </div>
@@ -40,7 +42,7 @@ const Header: React.FC = () => {
             src={user?.picture}
           />
         ) : (
-          <button onClick={navigateToLogin}>Login</button>
+          <button onClick={navigateToLogin}>{t('login')}</button>
         )}
       </div>
     </nav>
