@@ -16,17 +16,14 @@ jobs:
       - uses: dtolnay/rust-toolchain@nightly
         with:
           components: clippy, rustfmt
+      - run: cargo fmt
+      - run: clippy -- -D warnings
+
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: 1.0.7
-      - run: bun install
-      - name: "check:toml"
-        run: bun --bun "taplo check"
-      - name: "check:rust"
-        run: bun --bun "cargo clippy -- -D warnings"
-      - name: "format:toml"
-        run: bun --bun "taplo fmt"
-      - name: "format:node"
-        run: bun --bun "prettier --write"
-      - name: "format:rust"
-        run: bun --bun "cargo fmt
+      - name: "Install Node depdenencies"
+        run: bun install
+      - run: bun --bun "check:toml"
+      - run: bun --bun "format:toml"
+      - run: bun --bun "format:node"
