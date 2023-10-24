@@ -1,0 +1,32 @@
+name: "CI"
+
+on:
+  push:
+  pull_request:
+
+env:
+  RUSTFLAGS: "-Dwarnings"
+
+jobs:
+  rust:
+    name: "Check"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: clippy, rustfmt
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 1.0.7
+      - run: bun install
+      - name: "check:toml"
+        run: bun --bun "taplo check"
+      - name: "check:rust"
+        run: bun --bun "cargo clippy -- -D warnings"
+      - name: "format:toml"
+        run: bun --bun "taplo fmt"
+      - name: "format:node"
+        run: bun --bun "prettier --write"
+      - name: "format:rust"
+        run: bun --bun "cargo fmt

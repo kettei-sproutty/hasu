@@ -1,0 +1,31 @@
+{
+  "name": "project-hasu-website",
+  "description": "Project Hasu Website",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^13.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.8",
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
+    "bun-types": "1.0.7",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": "18",
+    "bun": "1.0.7"
+  },
+  "volta": {
+    "node": "18.18.2",
+    "bun": "1.0.7"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "project-hasu",
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {
+    "prepare": "bun --bun scripts/git-hooks.ts",
+    "check:toml": "taplo check",
+    "check:rust": "cargo clippy -- -D warnings",
+    "format:toml": "taplo fmt",
+    "format:node": "prettier --write",
+    "format:rust": "cargo fmt"
+  },
+  "lint-staged": {
+    "*.toml": [
+      "taplo fmt --"
+    ],
+    "*.{ts,tsx,json,yaml}": [
+      "prettier --write --"
+    ],
+    "*.rs": [
+      "cargo fmt --"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.0.0",
+    "@commitlint/config-conventional": "^18.0.0",
+    "@taplo/cli": "^0.5.2",
+    "bun-types": "1.0.7",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": "18",
+    "bun": "1.0.7"
+  },
+  "volta": {
+    "node": "18.18.2",
+    "bun": "1.0.7"
+  }
+}
