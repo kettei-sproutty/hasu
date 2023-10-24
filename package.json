@@ -2,13 +2,13 @@
   "name": "project-hasu",
   "license": "MIT",
   "version": "0.1.0",
+  "workspaces": [
+    "www"
+  ],
   "scripts": {
     "prepare": "bun --bun scripts/git-hooks.ts",
-    "check:toml": "taplo check",
-    "check:rust": "cargo clippy -- -D warnings",
-    "format:toml": "taplo fmt",
-    "format:node": "prettier --write",
-    "format:rust": "cargo fmt"
+    "toml:check": "taplo check",
+    "toml:format": "taplo fmt"
   },
   "lint-staged": {
     "*.toml": [

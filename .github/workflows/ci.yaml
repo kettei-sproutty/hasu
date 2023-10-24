@@ -23,6 +23,6 @@ jobs:
           bun-version: 1.0.7
       - name: "Install Node depdenencies"
         run: bun install
-      - run: bun --bun "check:toml"
-      - run: bun --bun "format:toml"
+      - run: bun --bun "toml:check"
+      - run: bun --bun "toml:format"
       - run: bun --bun "format:node"
