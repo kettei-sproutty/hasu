@@ -2,9 +2,9 @@ import { argv } from "bun";
 import fs from "fs";
 import path from "path";
 
-const PRE_COMMIT = [`bun --bun run lint-staged`];
+const PRE_COMMIT = ["bun --bun run lint-staged"];
 
-const COMMIT_MSG = [`bun --bun commitlint --from HEAD~1 --to HEAD --verbose`];
+const COMMIT_MSG = ["bun --bun commitlint --no -- commitlint --edit ${1}"];
 
 const hooks = {
   "pre-commit": PRE_COMMIT,
