@@ -8,7 +8,8 @@
   "scripts": {
     "prepare": "bun --bun scripts/git-hooks.ts",
     "toml:check": "taplo check",
-    "toml:format": "taplo fmt"
+    "toml:format": "taplo fmt",
+    "node:check": "prettier --check ."
   },
   "lint-staged": {
     "*.toml": [

@@ -24,5 +24,4 @@ jobs:
       - name: "Install Node depdenencies"
         run: bun install
       - run: bun --bun "toml:check"
-      - run: bun --bun "toml:format"
-      - run: bun --bun "format:node"
+      - run: bun --bun "node:check"
